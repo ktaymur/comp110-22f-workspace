@@ -1,7 +1,6 @@
 """One shot guess wordle!"""
 
-
-__author__ = 730556906
+__author__ = "730556906"
 
 secret: str = "python"
 guess: str = input(f"What is your {len(secret)}-letter guess? ")
