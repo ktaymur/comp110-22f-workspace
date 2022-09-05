@@ -1,8 +1,7 @@
-"""One shot wordle"""
-from platform import python_branch
+"""One shot guess wordle!"""
 
 
-__author__: str = 730556906
+__author__ = 730556906
 
 secret: str = "python"
 guess: str = input(f"What is your {len(secret)}-letter guess? ")
@@ -10,7 +9,7 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 while len(guess) != len(secret):
-    guess = input(f"That was not {len(secret)} letters! Try again: ")
+    guess = input(f"That was not {str(len(secret))} letters! Try again: ")
 
 i: int = 0
 s: str = ""
@@ -20,13 +19,13 @@ while i < len(secret):
     else:
         index_match: int = 0
         character_present: bool = False
-        while character_present == False and index_match < len(secret):
+        while character_present is False and index_match < len(secret):
             if secret[index_match] == guess[i]:
                 s = s + YELLOW_BOX
                 character_present = True
             else:
                 index_match += 1
-        if character_present == False:
+        if character_present is False:
             s = s + WHITE_BOX
         
     i = i + 1
